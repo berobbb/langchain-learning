@@ -1,0 +1,16 @@
+What is LangChain?
+
+
+LangChain is a framework for building applications powered by LLMs by connecting models with prompts, data sources, tools, memory, and application logic.
+
+                  User
+                   ↓
+                Chatbot
+                   ↓
+              LangChain
+          ┌────────┼─────────┐
+          ↓        ↓         ↓
+        LLM     Database    Tools
+          ↓        ↓         ↓
+       Response  Company   APIs
+                 Data
