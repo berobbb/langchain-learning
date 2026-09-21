@@ -15,9 +15,10 @@ llm = ChatOpenAI(
 search = DuckDuckGoSearchRun()
 tools=[search]
 memory=InMemorySaver()
-agent = create_agent(llm,tools,checkpointer=memory, system_prompt="you are a helpful assistant")
+agent = create_agent(llm,tools=tools,checkpointer=memory, system_prompt="you are a helpful assistant")
 config = {"configurable": {"thread_id": "Mar26"}}
 from rich import print
 content=agent.invoke( {"messages": [HumanMessage(content="Hi I'm Ram and I live in Dehradun")]}, config)
-print(content)
+print(content["messages"][-1].content)
 content=agent.invoke( {"messages": [HumanMessage(content="Latest news about where I live")]}, config)
+print(content["messages"][-1].content)
